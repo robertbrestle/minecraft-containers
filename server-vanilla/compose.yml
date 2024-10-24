@@ -1,0 +1,17 @@
+services:
+  server:
+    image: server-vanilla:latest
+    container_name: minecraft-server-vanilla
+    ports:
+      - 25565:25565
+    volumes:
+      - ./world:/opt/vanilla/world
+      - ./logs:/opt/vanilla/logs
+      - ./server.properties:/opt/vanilla/server.properties
+      ## add other files as necessary
+      ## create the files before running!
+      #- ./ops.json:/opt/vanilla/ops.json
+      #- ./whitelist.json:/opt/vanilla/whitelist.json
+      #- ./usercache.json:/opt/vanilla/usercache.json
+      #- ./banned-ips.json:/opt/vanilla/banned-ips.json
+      #- ./banned-players.json:/opt/vanilla/banned-players.json

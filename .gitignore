@@ -1,0 +1,4 @@
+*.jar
+world/
+logs/
+server.properties

@@ -1,0 +1,17 @@
+services:
+  server:
+    image: server-1.12.2-pack:latest
+    container_name: minecraft-server-1.12.2-pack
+    ports:
+      - 25566:25566
+    volumes:
+      - ./world:/opt/server/world
+      - ./logs:/opt/server/logs
+      - ./server.properties:/opt/server/server.properties
+      ## add other files as necessary
+      ## create the files before running!
+      #- ./ops.json:/opt/server/ops.json
+      #- ./whitelist.json:/opt/server/whitelist.json
+      #- ./usercache.json:/opt/server/usercache.json
+      #- ./banned-ips.json:/opt/server/banned-ips.json
+      #- ./banned-players.json:/opt/server/banned-players.json
