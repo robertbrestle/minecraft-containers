@@ -41,7 +41,7 @@ For more information:
 
 ## Prerequisites
 
-none
+Check for the latest pack version on [The 1.12.2 Pack official website](https://the-1122-pack.com/), and substitute the `ENV PACK` value in the `Dockerfile`.
 
 ## Build Image
 

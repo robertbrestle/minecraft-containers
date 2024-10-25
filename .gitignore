@@ -2,3 +2,4 @@
 world/
 logs/
 server.properties
+*.json

@@ -23,7 +23,11 @@
 
 # create necessary directories and files to mount properly
 mkdir -p world
+mkdir -p backups
 mkdir -p logs
+
+touch ops.json
+touch whitelist.json
 
 # create server configuration file if it doesn't exist
 # https://minecraft.wiki/w/Server.properties

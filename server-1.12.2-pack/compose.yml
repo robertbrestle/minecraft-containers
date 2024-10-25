@@ -6,12 +6,13 @@ services:
       - 25566:25566
     volumes:
       - ./world:/opt/server/world
+      - ./backups:/opt/server/backups
       - ./logs:/opt/server/logs
       - ./server.properties:/opt/server/server.properties
+      - ./ops.json:/opt/server/ops.json
+      - ./whitelist.json:/opt/server/whitelist.json
       ## add other files as necessary
       ## create the files before running!
-      #- ./ops.json:/opt/server/ops.json
-      #- ./whitelist.json:/opt/server/whitelist.json
       #- ./usercache.json:/opt/server/usercache.json
       #- ./banned-ips.json:/opt/server/banned-ips.json
       #- ./banned-players.json:/opt/server/banned-players.json

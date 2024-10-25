@@ -11,7 +11,7 @@ RUN unzip server_${PACK}.zip -d /opt/server
 
 RUN echo "eula=true" > eula.txt
 RUN sed -i 's/Xmx4G/Xmx8G/g' /opt/server/LaunchServer.sh
-RUN echo -e "\nspawn-protection=-1" >> /opt/server/server.properties
+#RUN echo -e "\nspawn-protection=-1" >> /opt/server/server.properties
 RUN chmod +x /opt/server/LaunchServer.sh
 
 EXPOSE 25566
