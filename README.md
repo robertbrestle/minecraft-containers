@@ -1,6 +1,8 @@
 # minecraft-containers
 Containers for running various Minecraft servers.
 
+Built and tested on Ubuntu 22.04.
+
 ---
 
 # server-vanilla
@@ -59,5 +61,22 @@ Make sure you have the following files in the same directory as your `compose.ym
   - please note this is an older version of minecraft, so you may need to reference an [older version of server.properties](https://minecraft.wiki/w/Server.properties?oldid=1141217)
 
 You can edit `compose.yml` to add configuration files to your server. If you make changes to these files while the server is running, you will need to restart the container for them to take effect.
+
+# Startup Scripts
+
+## Systemd
+Each container folder comes a systemd service for running compose.
+
+To configure:
+1. Modify the `minecraft-server-vanilla.service` for your setup  
+2. Copy the service to `/etc/systemd/system/`  
+3. Reload the daemon `sudo systemctl daemon-reload`
+4. Start the service `sudo systemctl start minecraft-server-vanilla.service`  
+   - verify the container runs as expected  
+     - Docker: `docker ps -a`
+     - Service logs: `journalctl -u minecraft-server-vanilla.service`  
+     - Minecraft logs: `tail -f /opt/minecraft-containers/server-vanilla/logs/latest.log`  
+5. Enable the service to run at system startup `sudo systemctl enable minecraft-server-vanilla.service`  
+
 
 &nbsp;
